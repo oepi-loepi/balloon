@@ -1,0 +1,3 @@
+Copy the file Balloon4SpriteSheet.png to folder /qmf/www/images/Balloon4SpriteSheet.png
+
+restart the qui afterwards (killall qt-gui)
