@@ -5,7 +5,7 @@ import qb.components 1.0
 import BasicUIControls 1.0;
 //import QtQuick.Controls 1.3
 
-TransparentScreen {
+Screen {
 	id: balloonScreen
 	screenTitle: "Balloon!"
 	opacity: 1
@@ -24,7 +24,7 @@ TransparentScreen {
 		color: "transparent"
 		width: parent.width; height: parent.height  		
 		anchors {
-			top: sparent.top
+			top: parent.top
 			left: parent.left
 			topMargin:0
 			leftMargin: 0
@@ -35,13 +35,12 @@ TransparentScreen {
 			repeat: true
 			running: showBalloons
 			onTriggered: {
-				var component = Qt.createComponent("Balloon.qml");
+				var component = Qt.createComponent("qrc:/qb/components/Balloon.qml");
 				var balloon = component.createObject(game);
 				balloon.x = ((Math.random() * parent.width)-60);
 				balloon.y = parent.height;
 			}
 		}
-
 	}
 
 }

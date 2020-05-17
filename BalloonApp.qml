@@ -1,5 +1,5 @@
 //
-// Onkyoesp v1.0.7 by Oepi-Loepi
+// Balloon! v1.0.1 by Oepi-Loepi
 //
 
 import QtQuick 2.1
@@ -10,7 +10,7 @@ App {
 	id: balloonApp
 
 	property url tileUrl : "BalloonTile.qml"
-	property url thumbnailIcon: "qrc:/tsc/onkyo-resize.png"
+	property url thumbnailIcon: "qrc:/qb/components/BalloonIcon.png"
 
 	property url balloonScreenUrl : "BalloonScreen.qml"
 	property BalloonScreen balloonScreen
