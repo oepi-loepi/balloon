@@ -5,20 +5,19 @@ import qb.components 1.0
 import BasicUIControls 1.0;
 //import QtQuick.Controls 1.3
 
-Screen {
+TransparentScreen {
 	id: balloonScreen
 	screenTitle: "Balloon!"
 	opacity: 1
-	property int butHeight : 50
+	property bool showBalloons : false
 
 	onShown: {
-		//screenStateController.screenColorDimmedIsReachable = false
+		showBalloons  = true
 	}
 
-	function randomNumber(from, to) {
-        	return Math.floor(Math.random() * (to - from + 1) + from);
-    	}
-
+	onHidden: {
+		showBalloons = false
+	}
 
 	Rectangle {
 		id: game
@@ -34,11 +33,11 @@ Screen {
 		Timer {
 			interval: 1000
 			repeat: true
-			running: true
+			running: showBalloons
 			onTriggered: {
 				var component = Qt.createComponent("Balloon.qml");
 				var balloon = component.createObject(game);
-				balloon.x = randomNumber(0, parent.width);
+				balloon.x = ((Math.random() * parent.width)-60);
 				balloon.y = parent.height;
 			}
 		}
